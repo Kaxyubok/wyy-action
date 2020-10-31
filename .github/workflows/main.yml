@@ -54,7 +54,7 @@ jobs:
         python3 checkin.py <<EOF
         ${user_list[$i]}
         ${pwd_list[$i]}
-        echo SECRET=$SECRET > .env
+        echo PUSH_KEY=$PUSH_KEY > .env
         EOF
         done
      
