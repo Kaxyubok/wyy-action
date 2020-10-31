@@ -22,6 +22,8 @@ jobs:
       with:
         python-version: 3.7
     - name: 签到
+      env:
+          PUSH_KEY: ${{ secrets.PUSH_KEY }} # 设置的密钥
       run: |
         pip install -r requirements.txt
         
@@ -52,5 +54,7 @@ jobs:
         python3 checkin.py <<EOF
         ${user_list[$i]}
         ${pwd_list[$i]}
+        echo SECRET=$SECRET > .env
         EOF
         done
+     
